@@ -51,17 +51,17 @@ function MainPage() {
   let message;
   let image;
 
-  if (sentiment == "neutral") {
+  if (sentiment === "neutral") {
     color = "gray"
     image = indifferent
     message = "Esse é um comentário neutro!"
 
-  } else if (sentiment == "positive") {
+  } else if (sentiment === "positive") {
     color = "#17C69B"
     image = happy
     message = "Esse é um comentário positivo!"
 
-  } else if (sentiment == "negative") {
+  } else if (sentiment === "negative") {
     color = "#FB3640"
     image = mad
     message = "Esse é um comentário negativo!"
