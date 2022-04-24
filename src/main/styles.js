@@ -1,20 +1,16 @@
 import styled from 'styled-components'
-import mad from '../../assets/mad.png'
 
 export const Container = styled.div`
-    display: flex;
-    background-color: #FB3640;
-    
+
+    background-color: #a13866;
+    width: 100vw;
     height: 100vh;
-    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    display: flex;
     align-items: center;
     justify-content:center;
     flex-direction: column;
-
-    border: 1px solid #000;
-    background-image: url(${mad});
-    width: 100vw;
-    height:100vh;
     
 `
 
@@ -24,28 +20,22 @@ export const title = styled.div`
     text-shadow: 2px 0 0 black, -2px 0 0 black, 0 2px 0 black, 0 -2px 0 black, 1px 1px black, -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black;
     color: white;
     margin-bottom: 10px;
-    border-color: black;
-    
 `
-
 
 export const middleContainer = styled.div`
     display: column;
     background-color: #3499BE;
     height: 488px;
     width: 618px;
-    border-radius: 30px;    
-    border-style: solid;
-    border-width: 1px;
-    border-color: black;
-
+    border-radius: 30px;
+    
     p{
         display: flex;
         justify-content: center;
         align-items: center;
         color: white;
         font-weight: bold;
-        font-size: 32px;
+        font-size: 25px;
     }
 
     .input{
@@ -53,10 +43,10 @@ export const middleContainer = styled.div`
         width: 490px;
         height: 137px;
         border-radius: 10px;
-
     }
+
     .button{
-        margin-top: 25px;
+        margin-top: 40px;
         margin-left: 185px;    
         width: 252px;
         height: 45px;
@@ -65,14 +55,22 @@ export const middleContainer = styled.div`
         font-weight: bold;
         font-size: 20px;
         color: white;
-        
-        
     }
 
 `
+/*margin: 0;
+background: url(${ background });
+background - repeat: no - repeat;
+background - position: center;
+background - size: cover;
+border: 1px solid #000;
+height: 770px;
+width: 100 %;
+*/
 
-export const redSpace = styled.div`
-    background-color:#FB3640;    
+
+export const sentimentSpace = styled.div`
+    background-color:#3499BE;    
     height: 118px;
     display: flex;
     align-items:  center;
