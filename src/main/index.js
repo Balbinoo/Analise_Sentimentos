@@ -4,10 +4,15 @@ import React, { useState } from 'react';
 import happy from '../assets/happy.png'
 import mad from '../assets/mad.png'
 import indifferent from '../assets/neutral.png'
+import loadingImage from '../assets/loading.png'
 
 function MainPage() {
   const [userInput, setUserInput] = useState('');
   const [sentiment, setSentimentValue] = useState(null);
+  const [loading, setLoading] = useState(false)
+  let color;
+  let message;
+  let image = loading ? loadingImage : null ;
 
   function defineSentiment(sentimentValue) {
 
@@ -22,11 +27,13 @@ function MainPage() {
 
   function handleResponse(response) {
     // setSentimentValue(response)
+    setLoading(false)
     console.log('Value from bert :' + response);
     defineSentiment(response)
   }
 
   function SendText() {
+    setLoading(true)
     const requestOptions = {
       method: 'POST',
       headers: {
@@ -47,9 +54,6 @@ function MainPage() {
     setUserInput(event.target.value);
   };
 
-  let color;
-  let message;
-  let image;
 
   if (sentiment === "neutral") {
     color = "gray"
@@ -75,7 +79,7 @@ function MainPage() {
     backgroundColor: color,
     color: "green"
   };
-
+  
   const containerGeneral = {
     backgroundImage: 'url(' + image + ')',
     backgroundColor: color,
@@ -87,9 +91,9 @@ function MainPage() {
         Analisador de Sentimentos
       </S.title>
       <S.middleContainer>
-        <p>Digite um comentário para ser analisado:</p>
+        <p> {loading ? 'Analisando comentário...' : 'Digite um comentário para ser analisado'} </p>
         <textarea className="input" value={userInput} onChange={handleChange} ></textarea>
-        <S.sentimentSpace style={middleBar}> <p>{message}</p> </S.sentimentSpace>
+        <S.sentimentSpace style={middleBar}> <p> {loading ? 'Loading' : message} </p> </S.sentimentSpace>
         <button onClick={SendText} className="button" type="textarea"> ANALISAR </button>
       </S.middleContainer>
     </S.Container >
