@@ -5,6 +5,9 @@ import happy from '../assets/happy.png'
 import mad from '../assets/mad.png'
 import indifferent from '../assets/neutral.png'
 import loadingImage from '../assets/loading.png'
+import LoadingAnimation from '../components/Loading'
+
+
 
 function MainPage() {
   const [userInput, setUserInput] = useState('');
@@ -12,7 +15,7 @@ function MainPage() {
   const [loading, setLoading] = useState(false)
   let color;
   let message;
-  let image = loading ? loadingImage : null ;
+  let image;
 
   function defineSentiment(sentimentValue) {
 
@@ -76,13 +79,12 @@ function MainPage() {
   }
 
   const middleBar = {
-    backgroundColor: color,
-    color: "green"
+    backgroundColor: loading ? '#3499BE' : color
   };
-  
+
   const containerGeneral = {
-    backgroundImage: 'url(' + image + ')',
-    backgroundColor: color,
+    backgroundImage: 'url(' + (loading ? null : image) + ')',
+    backgroundColor: loading ? 'gray' : color,
   }
 
   return (
@@ -93,7 +95,7 @@ function MainPage() {
       <S.middleContainer>
         <p> {loading ? 'Analisando comentário...' : 'Digite um comentário para ser analisado'} </p>
         <textarea className="input" value={userInput} onChange={handleChange} ></textarea>
-        <S.sentimentSpace style={middleBar}> <p> {loading ? 'Loading' : message} </p> </S.sentimentSpace>
+        <S.sentimentSpace style={middleBar}> <p> {loading ? <LoadingAnimation /> : message} </p> </S.sentimentSpace>
         <button onClick={SendText} className="button" type="textarea"> ANALISAR </button>
       </S.middleContainer>
     </S.Container >

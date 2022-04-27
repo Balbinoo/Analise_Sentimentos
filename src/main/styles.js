@@ -58,16 +58,6 @@ export const middleContainer = styled.div`
     }
 
 `
-/*margin: 0;
-background: url(${ background });
-background - repeat: no - repeat;
-background - position: center;
-background - size: cover;
-border: 1px solid #000;
-height: 770px;
-width: 100 %;
-*/
-
 
 export const sentimentSpace = styled.div`
     background-color:#3499BE;    
