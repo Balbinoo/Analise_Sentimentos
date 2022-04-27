@@ -5,9 +5,6 @@ import happy from '../assets/happy.png'
 import mad from '../assets/mad.png'
 import indifferent from '../assets/neutral.png'
 import loadingImage from '../assets/loading.png'
-import LoadingAnimation from '../components/Loading'
-
-
 
 function MainPage() {
   const [userInput, setUserInput] = useState('');
