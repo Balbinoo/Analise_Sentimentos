@@ -44,7 +44,7 @@ function MainPage() {
       },
       body: JSON.stringify({ 'text': userInput })
     };
-    fetch('http://127.0.0.1:8000/nlpapp/sentiment-analises', requestOptions)
+    fetch('f6b2-189-50-95-214.sa.ngrok.io/nlpapp/sentiment-analises', requestOptions)
       .then(response => response.json())
       .then(response => handleResponse(response))
   }
