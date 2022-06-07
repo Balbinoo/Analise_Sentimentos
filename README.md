@@ -1,11 +1,11 @@
 # Análise de Sentimentos
 
 Projeto elaborado por estudantes da disciplina de Aprendizado de Máquina da Universidade de Brasília.
-Por meio do modelo pré treiando Bert advindo dos modelos Transformers, nós o utilizamos para fazer o fine-tuning utilizando o a rede neural recorrente GRU, para assim analisarmos o sentimento por trás de um comentário de filme, pois é utiizado o dataset do IMDB. <br>
+Por meio do modelo pré-treinado Bert advindo dos modelos Transformers, nós o utilizamos para fazer o fine-tuning utilizando a rede neural recorrente GRU, para assim analisarmos o sentimento por trás do comentário de um filme, pois foi utilizado o dataset do IMDB. <br>
 
 Dessa forma, o objetivo do modelo é entender o sentimento de um comentário, sendo este positivo, negativo ou neutro.<br>
 
-Este é o repositório do frontend do projeto.
+Este é o repositório frontend do projeto.
 
 ## Como rodar localmente
 
